@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.min.css">
+<body>
+<div class="container">
+    <form action="{:url('login','',false)}" method="post" class="ajax_form">
+
+        <h2>{$Think.config.SITE_NAME} - 管理后台登录</h2>
+        <table class="edit login_input">
+            <tr>
+                <td>
+                    <input type="text" name="username" class="text large wfull" placeholder="请输入账号.."/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="password" name="password" class="text large wfull" autocomplete="off"
+                           placeholder="请输入密码..">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <button type="submit" class="btn btn_large wfull">登录</button>
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>
+<script>
+    Do(function () {
+        $('.reloadverify,.verifyimg').on('click', function (e) {
+            $('.verifyimg').attr('src', "{{:url('verify')}}?" + Math.random());
+            e.preventDefault();
+        });
+    });
+</script>
+</body>
+</html>
